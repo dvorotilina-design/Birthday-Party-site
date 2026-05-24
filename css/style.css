@@ -1,0 +1,1049 @@
+/* Import Google Fonts for modern & playful Hebrew text */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Varela+Round&display=swap');
+:root {
+    /* Colorful Retro 90s Color Palette (Neobrutalism Style) */
+    --bg-primary: #fffdf6;       /* Warm cream yellow nostalgia */
+    --bg-secondary: #fffef2;     /* Slightly lighter yellow for cards */
+    --color-text: #1e1a3c;       /* Deep dark navy indigo (extremely high contrast) */
+    --color-text-muted: #4e4875; /* Soft indigo for subtext */
+
+    --color-pink: #ff2e93;       /* Vivid neon pink */
+    --color-turquoise: #00e5c9;  /* Retro turquoise */
+    --color-purple: #7b2cbf;     /* Deep vibrant purple */
+    --color-yellow: #ffd166;     /* Bouncy pastel yellow */
+    --color-orange: #ff9f1c;     /* Fun neon orange */
+
+    /* Borders and Shadows */
+    --border-color: #1e1a3c;
+    --border-width: 3px;
+    --border-radius-sm: 8px;
+    --border-radius: 16px;
+    --border-radius-lg: 24px;
+
+    --box-shadow: 6px 6px 0px var(--border-color);
+    --box-shadow-hover: 2px 2px 0px var(--border-color);
+    --box-shadow-pink: 6px 6px 0px var(--color-pink);
+
+    /* Fonts */
+    --font-main: 'Rubik', sans-serif;
+    --font-heading: 'Varela Round', sans-serif;
+
+    /* Accessibility focus outline */
+    --focus-outline: 3px dashed var(--color-pink);
+}
+/* Base Reset & Globals */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease, background-color 0.2s ease;
+}
+html, body {
+    font-family: var(--font-main);
+    background-color: var(--bg-primary);
+    color: var(--color-text);
+    overflow-x: hidden;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: bold;
+    color: var(--color-text);
+    margin-bottom: 0.5em;
+}
+/* Custom Scrollbar for Retro Feel */
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+    border-left: var(--border-width) solid var(--border-color);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-purple);
+    border: 2px solid var(--bg-primary);
+    border-radius: 10px;
+}
+/* Accessible Focus States */
+a:focus, button:focus, input:focus, select:focus, textarea:focus, [tabindex="0"]:focus {
+    outline: var(--focus-outline) !important;
+    outline-offset: 4px;
+}
+/* Screen Reader Only Helper (WCAG) */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+/* Skip Navigation Link (WCAG Accessibility) */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    right: 20px;
+    background: var(--color-pink);
+    color: #fff;
+    padding: 10px 20px;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--box-shadow);
+    z-index: 9999;
+    text-decoration: none;
+    font-weight: bold;
+}
+.skip-link:focus {
+    top: 20px;
+}
+/* Common Layout Elements */
+.section-padding {
+    padding: 80px 0;
+}
+.neobrutal-border {
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: var(--bg-secondary);
+}
+.neobrutal-border:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 10px 10px 0 px var(--border-color);
+}
+/* Retro Header & Navigation */
+.navbar-retro {
+    background-color: var(--bg-primary);
+    border-bottom: var(--border-width) solid var(--border-color);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar-brand-retro {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--color-text) !important;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform-origin: center;
+}
+.navbar-brand-retro:hover {
+    transform: rotate(-2deg) scale(1.05);
+}
+.navbar-brand-retro span.badge-retro {
+    background-color: var(--color-pink);
+    color: #fff;
+    border: 2px solid var(--border-color);
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: var(--border-radius-sm);
+    transform: rotate(3deg);
+}
+.nav-link-retro {
+    font-family: var(--font-heading);
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--color-text) !important;
+    padding: 8px 16px !important;
+    border-radius: var(--border-radius-sm);
+    border: 2px solid transparent;
+    margin: 0 4px;
+}
+.nav-link-retro:hover {
+    background-color: var(--color-yellow);
+    border: 2px solid var(--border-color);
+    transform: translateY(-2px);
+}
+.nav-link-retro.active {
+    background-color: var(--color-pink) !important;
+    color: #fff !important;
+    border: 2px solid var(--border-color);
+    box-shadow: 3px 3px 0 px var(--border-color);
+}
+/* Custom Hamburger Icon for Mobile */
+.navbar-toggler-retro {
+    border: var(--border-width) solid var(--border-color) !important;
+    background-color: var(--color-yellow);
+    box-shadow: 3px 3px 0 px var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 8px;
+}
+.navbar-toggler-retro:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 px var(--border-color);
+}
+/* Playful Neobrutalist Retro Buttons */
+.btn-retro {
+    font-family: var(--font-heading);
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 12px 28px;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--box-shadow);
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transform: translate(0, 0);
+    background-color: #fff;
+    color: var(--color-text);
+    user-select: none;
+}
+.btn-retro:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0 px var(--border-color);
+}
+.btn-retro:active {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0 px var(--border-color);
+}
+.btn-retro-pink {
+    background-color: var(--color-pink);
+    color: #fff;
+}
+.btn-retro-pink:hover {
+    background-color: #ff0073;
+    color: #fff;
+}
+.btn-retro-turquoise {
+    background-color: var(--color-turquoise);
+    color: var(--color-text);
+}
+.btn-retro-turquoise:hover {
+    background-color: #00cca3;
+}
+.btn-retro-purple {
+    background-color: var(--color-purple);
+    color: #fff;
+}
+.btn-retro-purple:hover {
+    background-color: #651aa6;
+    color: #fff;
+}
+.btn-retro-yellow {
+    background-color: var(--color-yellow);
+    color: var(--color-text);
+}
+.btn-retro-yellow:hover {
+    background-color: #e6b73c;
+}
+/* Hero Section Styles */
+.hero-retro {
+    background-color: var(--color-yellow);
+    border-bottom: var(--border-width) solid var(--border-color);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+/* Animated Retro Birthday Background Shapes */
+.retro-shape {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.15;
+    animation: floatShape 8s infinite alternate ease-in-out;
+}
+@keyframes floatShape {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-30px) rotate(15deg); }
+}
+.hero-title-retro {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+    text-shadow: 4px 4px 0 px var(--color-pink);
+    margin-bottom: 20px;
+}
+.hero-subtitle-retro {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-text-muted);
+    margin-bottom: 40px;
+}
+/* Neobrutalist Cards Grid (Featured Sections) */
+.card-retro {
+    background-color: var(--bg-secondary);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.card-retro:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 11px 11px 0 px var(--border-color);
+}
+.card-icon-retro {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: var(--border-width) solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    background-color: var(--color-turquoise);
+    box-shadow: 3px 3px 0 px var(--border-color);
+}
+.card-retro-pink .card-icon-retro {
+    background-color: var(--color-pink);
+    color: #fff;
+}
+.card-retro-purple .card-icon-retro {
+    background-color: var(--color-purple);
+    color: #fff;
+}
+.card-retro-yellow .card-icon-retro {
+    background-color: var(--color-yellow);
+}
+/* Retro Contrast Grid (Then vs. Now) */
+.then-now-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+@media (max-width: 768px) {
+    .then-now-container {
+        grid-template-columns: 1fr;
+    }
+}
+.box-comparison {
+    padding: 30px;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    position: relative;
+}
+.box-then {
+    background-color: #e8f9fd; /* Happy soft pastel blue */
+    box-shadow: 6px 6px 0 px var(--color-turquoise);
+}
+.box-then::after {
+    content: "פעם... 🧸";
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background-color: var(--color-turquoise);
+    border: 2px solid var(--border-color);
+    padding: 4px 12px;
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-heading);
+    font-weight: bold;
+    box-shadow: 2px 2px 0 px var(--border-color);
+}
+.box-now {
+    background-color: #fff0f5; /* Humorous soft red-pink */
+    box-shadow: 6px 6px 0 px var(--color-pink);
+}
+.box-now::after {
+    content: "היום! 🔋";
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background-color: var(--color-pink);
+    color: #fff;
+    border: 2px solid var(--border-color);
+    padding: 4px 12px;
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-heading);
+    font-weight: bold;
+    box-shadow: 2px 2px 0 px var(--border-color);
+}
+.box-comparison ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+.box-comparison li {
+    position: relative;
+    padding-right: 25px;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+.box-comparison li::before {
+    content: "✨";
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.box-now li::before {
+    content: "🩹";
+}
+/* 3D Flip Card System (Games Page) */
+.flip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    perspective: 1200px;
+}
+.flip-card-container {
+    height: 380px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+/* Support flip via hover and active JS class for accessibility */
+.flip-card-container:hover .flip-card-inner,
+.flip-card-container:focus .flip-card-inner,
+.flip-card-inner.flipped {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.flip-card-front {
+    background-color: var(--bg-secondary);
+    color: var(--color-text);
+}
+.flip-card-back {
+    background-color: var(--color-text);
+    color: #fff;
+    transform: rotateY(180deg);
+    overflow-y: auto;
+}
+.flip-card-back h3, .flip-card-back p, .flip-card-back h4 {
+    color: #fff !important;
+}
+.badge-card {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 4px 10px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    font-family: var(--font-heading);
+}
+.badge-classic {
+    background-color: var(--color-turquoise);
+    color: var(--color-text);
+}
+.badge-upgraded {
+    background-color: var(--color-pink);
+    color: #fff;
+}
+/* Custom Interactive Simulated Karaoke Player (Cake & Karaoke Page) */
+.karaoke-player-container {
+    background-color: var(--color-text);
+    color: #fff;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 10px 10px 0 px var(--color-pink);
+    padding: 40px;
+    position: relative;
+}
+.cassette-deck {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto 30px auto;
+    border: var(--border-width) solid #fff;
+    background-color: #2b2554;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    position: relative;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+}
+.cassette-label {
+    background: linear-gradient(90deg, var(--color-pink), var(--color-orange), var(--color-yellow));
+    color: var(--color-text);
+    font-weight: bold;
+    padding: 6px;
+    text-align: center;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-heading);
+}
+.cassette-window {
+    width: 70%;
+    height: 60px;
+    margin: 15px auto 0 auto;
+    background-color: #121024;
+    border: 2px solid #555;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+}
+/* Animated rotating gears on active */
+.gear {
+    width: 40px;
+    height: 40px;
+    border: 4px dashed #777;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+}
+.gear-left { left: 40px; }
+.gear-right { right: 40px; }
+.playing .gear-left {
+    animation: rotateGear 3s infinite linear;
+}
+.playing .gear-right {
+    animation: rotateGear 3s infinite linear reverse;
+}
+@keyframes rotateGear {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.equalizer-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 4px;
+    height: 50px;
+    margin-bottom: 25px;
+}
+.eq-bar {
+    width: 8px;
+    height: 5px;
+    background-color: var(--color-turquoise);
+    border-radius: 2px;
+}
+.playing .eq-bar {
+    animation: bounceBar 1.2s infinite ease-in-out alternate;
+}
+/* Add custom animations with delays for equalizer effect */
+.playing .eq-bar:nth-child(2) { animation-delay: 0.1s; background-color: var(--color-pink); }
+.playing .eq-bar:nth-child(3) { animation-delay: 0.3s; background-color: var(--color-yellow); }
+.playing .eq-bar:nth-child(4) { animation-delay: 0.2s; background-color: var(--color-orange); }
+.playing .eq-bar:nth-child(5) { animation-delay: 0.5s; background-color: var(--color-purple); }
+.playing .eq-bar:nth-child(6) { animation-delay: 0.4s; background-color: var(--color-turquoise); }
+.playing .eq-bar:nth-child(7) { animation-delay: 0.15s; background-color: var(--color-pink); }
+@keyframes bounceBar {
+    0% { height: 5px; }
+    100% { height: 45px; }
+}
+.lyrics-screen {
+    background-color: #121024;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 20px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--color-turquoise);
+}
+.lyrics-screen p {
+    line-height: 1.4;
+    text-shadow: 0 0 10px rgba(0, 229, 201, 0.5);
+    margin: 0;
+}
+/* Playlist item list */
+.playlist-retro {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+.playlist-item {
+    background-color: #2b2554;
+    border: 2px solid #fff;
+    border-radius: var(--border-radius-sm);
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+.playlist-item:hover, .playlist-item.active {
+    background-color: var(--color-pink);
+    color: #fff;
+    border-color: var(--border-color);
+    transform: translateX(-4px);
+}
+.playlist-item span.play-icon::before {
+    content: "▶️";
+}
+.playlist-item.active span.play-icon::before {
+    content: "⏸️";
+}
+/* Interactive Recipe Styles */
+.recipe-card {
+    background-color: var(--bg-secondary);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    padding: 40px;
+}
+.recipe-header {
+    border-bottom: var(--border-width) solid var(--border-color);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+.recipe-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+.meta-badge {
+    background-color: var(--color-turquoise);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 6px 12px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+/* Interactive Checklist */
+.checklist-retro {
+    list-style: none;
+    padding: 0;
+}
+.checklist-retro li {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+.checkbox-custom {
+    width: 25px;
+    height: 25px;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 4px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.1s ease;
+}
+.checklist-retro li:hover .checkbox-custom {
+    background-color: var(--color-yellow);
+}
+.checklist-retro li.checked {
+    color: var(--color-text-muted);
+    text-decoration: line-through;
+}
+.checklist-retro li.checked .checkbox-custom {
+    background-color: var(--color-turquoise);
+}
+.checklist-retro li.checked .checkbox-custom::after {
+    content: "✔";
+    color: var(--color-text);
+    font-weight: 900;
+    font-size: 1rem;
+}
+/* Step by Step Progress Container */
+.step-container {
+    padding: 25px;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: #fff;
+    margin-top: 30px;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.progress-retro-container {
+    height: 20px;
+    background-color: var(--bg-primary);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+.progress-retro-bar {
+    height: 100%;
+    width: 0%;
+    background-color: var(--color-pink);
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+/* Goodie Bag Route Selection Card styling */
+.route-card {
+    text-align: center;
+    padding: 40px 30px;
+    cursor: pointer;
+}
+.route-card .route-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    animation: bounceSlow 3s infinite alternate ease-in-out;
+}
+@keyframes bounceSlow {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
+}
+/* Interactive Drag & Add / Click Bag Builder (Goodies Page) */
+.bag-selector-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 45px;
+}
+@media (max-width: 576px) {
+    .bag-selector-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.bag-option-card {
+    background-color: var(--bg-secondary);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--border-color);
+}
+.bag-option-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 6px 6px 0 var(--border-color);
+}
+.bag-option-card.selected {
+    background-color: var(--color-yellow);
+    border-color: var(--color-pink);
+    border-width: 4px;
+    box-shadow: var(--box-shadow-pink);
+}
+.bag-icon-svg {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px auto;
+}
+/* Bag Builder Layout */
+.builder-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+@media (max-width: 992px) {
+    .builder-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .bag-aside-container {
+        position: static !important;
+    }
+}
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+.item-add-card {
+    background-color: var(--bg-secondary);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 3px 3px 0 var(--border-color);
+    cursor: pointer;
+}
+.item-add-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 0 var(--border-color);
+}
+.item-add-card.in-bag {
+    background-color: #e8f9fd;
+    border-color: var(--color-turquoise);
+}
+.item-add-icon {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+.item-add-title {
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+.btn-add-item {
+    padding: 5px 12px;
+    font-size: 0.85rem;
+    font-family: var(--font-heading);
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+.item-add-card.in-bag .btn-add-item {
+    background-color: var(--color-pink);
+    color: #fff;
+}
+/* Floating/Aside Bag Preview */
+.bag-aside-container {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+}
+.bag-visual-card {
+    background-color: var(--bg-secondary);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    text-align: center;
+}
+.visual-bag-container {
+    width: 160px;
+    height: 180px;
+    margin: 20px auto;
+    position: relative;
+}
+.visual-bag-svg {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: relative;
+}
+/* Bouncing bag animation on item add */
+.shake-bag {
+    animation: shakeBagAnim 0.5s ease-in-out;
+}
+@keyframes shakeBagAnim {
+    0% { transform: scale(1); }
+    20% { transform: scale(1.15) rotate(-5deg); }
+    45% { transform: scale(0.9) rotate(5deg); }
+    70% { transform: scale(1.05) rotate(-3deg); }
+    100% { transform: scale(1) rotate(0); }
+}
+/* Small item icons floating around the bag */
+.bag-badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    margin-top: 20px;
+    min-height: 40px;
+    padding: 10px;
+    border: 2px dashed var(--border-color);
+    border-radius: var(--border-radius-sm);
+    background-color: #fff;
+}
+.bag-badge-item {
+    background-color: var(--color-yellow);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 2px 8px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+.btn-remove-badge {
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 2px;
+    color: var(--color-pink);
+}
+/* Visual Flying Particle Animation */
+.flying-particle {
+    position: fixed;
+    font-size: 2rem;
+    pointer-events: none;
+    z-index: 9999;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* Neobrutalist Premium Form Inputs (Contact Page) */
+.form-group-retro {
+    margin-bottom: 25px;
+    position: relative;
+}
+.form-label-retro {
+    font-family: var(--font-heading);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+.form-input-retro {
+    width: 100%;
+    padding: 14px 20px;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    background-color: #fff;
+    font-family: var(--font-main);
+    font-size: 1.1rem;
+    color: var(--color-text);
+    box-shadow: 4px 4px 0 px var(--border-color);
+    transition: all 0.15s ease;
+}
+.form-input-retro:focus {
+    background-color: var(--bg-secondary);
+    box-shadow: 6px 6px 0 px var(--color-pink);
+}
+/* Responsive Custom Dialog / Modal Styling */
+.modal-retro {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1050;
+    overflow: hidden;
+    background-color: rgba(30, 26, 60, 0.5); /* Semi-transparent dark navy overlay */
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.modal-dialog-retro {
+    background-color: var(--bg-primary);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 12px 12px 0 px var(--color-purple);
+    width: 100%;
+    max-width: 550px;
+    position: relative;
+    animation: modalSlide 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes modalSlide {
+    0% { transform: translateY(50px) scale(0.95); opacity: 0; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+.modal-header-retro {
+    background-color: var(--color-purple);
+    color: #fff;
+    padding: 20px 30px;
+    border-bottom: var(--border-width) solid var(--border-color);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-header-retro h3 {
+    color: #fff !important;
+    margin: 0;
+}
+.btn-close-retro {
+    background: var(--color-pink);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 var(--border-color);
+}
+.btn-close-retro:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 var(--border-color);
+}
+.modal-body-retro {
+    padding: 30px;
+}
+/* Site Map Design */
+.sitemap-container {
+    margin-top: 30px;
+}
+.sitemap-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.sitemap-item {
+    position: relative;
+    padding: 10px 30px 10px 0;
+    margin-bottom: 5px;
+}
+.sitemap-item::before {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: -10px;
+    bottom: 50%;
+    width: 15px;
+    border-right: 2px dashed var(--border-color);
+    border-bottom: 2px dashed var(--border-color);
+}
+.sitemap-item-main {
+     font-family: var(--font-heading);
+    font-weight: bold;
+    font-size: 1.15rem;
+}
+.sitemap-sublist {
+    list-style: none;
+    padding-right: 20px;
+}
+.sitemap-subitem {
+    position: relative;
+    padding: 6px 20px 6px 0;
+}
+.sitemap-subitem::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 12px;
+    border-top: 2px dashed var(--border-color);
+}
+/* Footer Retro styling */
+.footer-retro {
+    background-color: var(--color-text);
+    color: #fff;
+    border-top: var(--border-width) solid var(--border-color);
+    padding: 40px 0;
+    text-align: center;
+}
+.footer-retro a {
+    color: var(--color-turquoise);
+    text-decoration: none;
+    font-weight: bold;
+}
+.footer-retro a:hover {
+    text-decoration: underline;
+}
+.footer-credit-retro {
+    font-family: var(--font-heading);
+    margin-top: 15px;
+    opacity: 0.8;
+}

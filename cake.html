@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="שרו שירים נוסטלגיים ואפו עוגת גן של פעם! נגן קריוקי קלטות מדומה ומתכון עוגת שוקולד מלבנית שלב-אחר-שלב עם שלבי הכנה אינטראקטיביים.">
+    <title>קריוקי ועוגה 🎤🎂 - יום הולדת של פעם!</title>
+
+    <!-- Bootstrap 5 CSS via Official CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet" integrity="sha384-nBkR5lTo2tvOT9Fhy4UBSEgYIM12140KBqnwPyTvMRJeAHkIzMTVXm8OBWUXnSbB" crossorigin="anonymous">
+
+    <!-- Custom design central stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="JS/app.js"></script>
+</head>
+<body>
+<!-- Skip to Main Content Link -->
+<a href="#main-content" class="skip-link">דלג לתוכן המרכזי</a>
+<!-- Active Accessibility Announcer for Screen Readers -->
+<div id="accessibility-announcer" class="sr-only" aria-live="polite"></div>
+<!-- Header Navigation -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-retro" aria-label="ניווט ראשי">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-retro" href="index.html">
+                🎈 יום הולדת של פעם <span class="badge-retro">עם כאבי גב!</span>
+            </a>
+
+            <button class="navbar-toggler navbar-toggler-retro" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="פתח תפריט ניווט">
+                <span class="fs-4">☰</span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 pr-0">
+                    <li class="nav-item">
+                        <a class="nav-link-retro" href="index.html">בית</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-retro" href="games.html">משחקים ונהנים</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-retro active" href="cake.html">קריוקי ועוגה</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-retro" href="goodies.html">שקיות הפתעה +18</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-retro" href="contact.html">צור קשר ומפת אתר</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- Main Content Area -->
+<main id="main-content" class="section-padding">
+    <div class="container">
+
+        <!-- Page Title & Introduction -->
+        <div class="text-center max-width-700 mx-auto mb-5">
+            <span class="fs-1 d-block mb-3">🎤📻🍫🎂</span>
+            <h1 style="font-size: 3rem; text-shadow: 2px 2px 0 px var(--color-purple);">קריוקי ועוגה נוסטלגיים</h1>
+            <p class="fs-5" style="color:var(--color-text-muted);">
+                אין מסיבת יום הולדת של פעם בלי מוזיקה מוגזמת שכולם שרים יחד ועוגת גן מפנקת במרכז השולחן!
+                הכנו לכם את השילוב המנצח: שירה מהספה (כי לעמוד מעייף את הגב) ומתכון עוגת שוקולד מלבנית אינטראקטיבי צעד-אחר-צעד.
+            </p>
+        </div>
+        <div class="row g-5">
+
+            <!-- SECTION 1: Karaoke Cassette Player -->
+            <div class="col-lg-6">
+                <section aria-labelledby="karaoke-heading">
+                    <div class="mb-4">
+                        <h2 id="karaoke-heading" style="font-size: 2.2rem; color:var(--color-pink);">🎤 איך להרים את האווירה גם בישיבה?</h2>
+                        <p class="fs-5 text-muted">
+                            קבלו את נגן הקלטות האינטראקטיבי שלנו! בחרו להיט נוסטלגי מהפלייליסט למטה, לחצו על 'נגן' ועקבו אחר המילים הקופצות על המסך הזוהר.
+                        </p>
+                    </div>
+                    <!-- Simulated audio cassette player container -->
+                    <div class="karaoke-player-container">
+                        <!-- Equalizer animation indicator -->
+                        <div class="equalizer-container" aria-hidden="true">
+                            <div class="eq-bar"></div>
+                            <div class="eq-bar"></div>
+                            <div class="eq-bar"></div>
+                            <div class="eq-bar"></div>
+                            <div class="eq-bar"></div>
+                            <div class="eq-bar"></div>
+                            <div class="eq-bar"></div>
+                        </div>
+                        <!-- Retro Tape Cassette graphics -->
+                        <div class="cassette-deck" aria-hidden="true">
+                            <div class="cassette-label">
+                                📼 יום הולדת של פעם - MIX 90s
+                            </div>
+                            <div class="cassette-window">
+                                <div class="gear gear-left"></div>
+                                <div class="gear gear-right"></div>
+                            </div>
+                        </div>
+                        <!-- Glowing lyric Screen -->
+                        <div class="lyrics-screen" role="status" aria-live="assertive">
+                            <p id="lyric-text">🎵 בחרו שיר נוסטלגי והתחילו לשיר! 🎵</p>
+                        </div>
+                        <!-- Currently playing song label -->
+                        <div class="text-center mt-3 mb-4">
+                <span class="badge bg-danger fs-6 p-2" style="border:2px solid #000; box-shadow:2px 2px 0 #000;">
+                  מנגן כעת: <span id="current-song-label">הילדים של היום VS פעם</span>
+                </span>
+                        </div>
+                        <!-- Player control action button -->
+                        <div class="text-center">
+                            <button id="play-btn" class="btn-retro btn-retro-turquoise w-75 py-3 fs-5" aria-label="נגן קריוקי מדומה">
+                                ▶️ נגן קריוקי מדומה!
+                            </button>
+                        </div>
+                        <!-- Song Selector Playlist -->
+                        <h3 class="mt-4 mb-2 fs-5 text-white">רשימת השירים בקלטת:</h3>
+                        <ul class="playlist-retro" aria-label="רשימת שירים לבחירה">
+                            <li class="playlist-item active" data-song-id="song1">
+                                <span>1. הילדים של היום VS פעם 🎒</span>
+                                <span class="play-icon" aria-hidden="true"></span>
+                            </li>
+                            <li class="playlist-item" data-song-id="song2">
+                                <span>2. עוגת שוקולד מלבנית (רמיקס) 🍫</span>
+                                <span class="play-icon" aria-hidden="true"></span>
+                            </li>
+                            <li class="playlist-item" data-song-id="song3">
+                                <span>3. בלדה לטרופית של אהבה 🥤</span>
+                                <span class="play-icon" aria-hidden="true"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <!-- SECTION 2: Chocolate Cake Recipe Wizard -->
+            <div class="col-lg-6">
+                <section aria-labelledby="recipe-heading">
+                    <div class="mb-4">
+                        <h2 id="recipe-heading" style="font-size: 2.2rem; color:var(--color-purple);">🎂 איך להכין עוגת גן שהיא גם בריאה?</h2>
+                        <p class="fs-5 text-muted">
+                            עזבו אתכם מסוכריות בריאות, סוכר קוקוס וקמח כוסמין מלא... עוגת שוקולד מלבנית קלאסי עם מים, שוקולית וקצפת היא הבריאות הכי טובה לנפש של פעם!
+                        </p>
+                    </div>
+                    <!-- The Recipe Card Container -->
+                    <div class="recipe-card">
+                        <div class="recipe-header">
+                            <h3 style="font-size: 1.8rem; margin:0;">🧁 עוגת הגן המלבנית המיתולוגית</h3>
+                            <div class="recipe-meta">
+                                <span class="meta-badge">⏰ זמן הכנה: 45 דקות</span>
+                                <span class="meta-badge">🔥 חום תנור: 180°C</span>
+                                <span class="meta-badge">😋 דרגת קושי: קלי קלות</span>
+                            </div>
+                        </div>
+                        <!-- Interactive Ingredients Checklist -->
+                        <h4 class="fs-5 mb-3" style="color:var(--color-pink);">🛒 מצרכים אינטראקטיביים (סמנו מה שיש לכם):</h4>
+                        <div class="row mb-4">
+                            <!-- Cake Batter -->
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <h5 class="fs-6 text-decoration-underline">לבלילת העוגה:</h5>
+                                <ul class="checklist-retro" aria-label="מצרכים לבלילה">
+                                    <li>
+                                        <div class="checkbox-custom"></div>
+                                        <span>1 כוס שוקולית 🍫</span>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox-custom"></div>
+                                        <span>1 כוס קמח לבן 🌾</span>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox-custom"></div>
+                                        <span>חצי כוס סוכר 🍬</span>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox-custom"></div>
+                                        <span>רבע כוס שמן 🌻</span>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox-custom"></div>
+                                        <span>3 ביצים גדולות 🥚</span>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox-custom"></div>
+                                        <span>חצי שמנת מתוקה (125 גרם) 🥛</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Coating & Decorating -->
+                            <div class="col-sm-6">
+                                <h5 class="fs-6 text-decoration-underline">לציפוי ולקישוט:</h5>
+                                <ul class="checklist-retro" aria-label="מצרכים לציפוי וקישוט">
+                                    <li>
+                                        <div class="checkbox-custom"></div>
+                                        <span>200 גרם שוקולד מריר/חלב 🍫</span>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox-custom"></div>
+                                        <span>חצי שמנת מתוקה לציפוי 🥛</span>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox-custom"></div>
+                                        <span>דף סוכר מביך (חובה!) 🖼️</span>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox-custom"></div>
+                                        <span>הרבה סוכריות צבעוניות 🌈</span>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox-custom"></div>
+                                        <span>קצפת לקישוט 🧁</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Step-by-Step Interactive Baking Wizard -->
+                        <h4 class="fs-5 mb-2" style="color:var(--color-purple);">🥣 שלבי הכנה (מדריך אינטראקטיבי):</h4>
+                        <div class="step-container">
+                            <div>
+                                <!-- Progress Bar -->
+                                <div class="progress-retro-container" aria-hidden="true">
+                                    <div class="progress-retro-bar"></div>
+                                </div>
+
+                                <!-- Step Text Holder -->
+                                <h5 id="step-title-display" style="font-size: 1.25rem;">שלב 1: חימום התנור 🔥</h5>
+                                <p id="step-instruction-text" style="font-size: 1.05rem;" class="mt-2 text-muted">
+                                    חממו את התנור מראש לטמפרטורה של 180 מעלות (חום עליון-תחתון). ודאו שרשת התנור ממוקמת במרכז.
+                                </p>
+                            </div>
+
+                            <!-- Wizard Navigation Buttons -->
+                            <div class="d-flex justify-content-between mt-4">
+                                <button id="prev-step-btn" class="btn-retro btn-retro-yellow py-2 px-3" aria-label="שלב הקודם" disabled>
+                                    ➡️ הקודם
+                                </button>
+                                <button id="next-step-btn" class="btn-retro btn-retro-pink py-2 px-4" aria-label="שלב הבא">
+                                    הבא ⬅️
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Shared Retro Footer -->
+<footer class="footer-retro">
+    <div class="container">
+        <nav aria-label="קישורי פוטר">
+            <div class="d-flex flex-wrap justify-content-center gap-4 mb-4 fs-5 font-heading">
+                <a href="index.html">דף הבית</a> |
+                <a href="games.html">משחקים ונהנים</a> |
+                <a href="cake.html">קריוקי ועוגה</a> |
+                <a href="goodies.html">שקיות הפתעה +18</a> |
+                <a href="contact.html">צור קשר ומפת אתר</a>
+            </div>
+        </nav>
+        <div class="footer-credit-retro">
+            <p class="fs-5 m-0">כל הזכויות שמורות © יום הולדת של פעם עם כאבי גב של היום 🩹🎈</p>
+            <p class="fs-6 mt-2 text-muted">האתר מפותח באמצעות Vanilla HTML, CSS ו-JS בלבד ללא שום צורך להזעיק אורתופד.</p>
+        </div>
+    </div>
+</footer>
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>

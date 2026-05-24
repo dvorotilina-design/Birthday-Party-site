@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="צרו קשר איתנו וקבלו ייעוץ יום הולדת נוסטלגי! עיינו במפת האתר ההיררכית המלאה לניווט קל ונגיש לכל חלקי האתר.">
+    <title>צור קשר ומפת אתר ✉️ - יום הולדת של פעם!</title>
+
+    <!-- Bootstrap 5 CSS via Official CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet" integrity="sha384-nBkR5lTo2tvOT9Fhy4UBSEgYIM12140KBqnwPyTvMRJeAHkIzMTVXm8OBWUXnSbB" crossorigin="anonymous">
+
+    <!-- Custom design central stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- Skip to Main Content Link -->
+<a href="#main-content" class="skip-link">דלג לתוכן המרכזי</a>
+<!-- Active Accessibility Announcer for Screen Readers -->
+<div id="accessibility-announcer" class="sr-only" aria-live="polite"></div>
+<!-- Header Navigation -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-retro" aria-label="ניווט ראשי">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-retro" href="index.html">
+                🎈 יום הולדת של פעם <span class="badge-retro">עם כאבי גב!</span>
+            </a>
+
+            <button class="navbar-toggler navbar-toggler-retro" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="פתח תפריט ניווט">
+                <span class="fs-4">☰</span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 pr-0">
+                    <li class="nav-item">
+                        <a class="nav-link-retro" href="index.html">בית</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-retro" href="games.html">משחקים ונהנים</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-retro" href="cake.html">קריוקי ועוגה</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-retro" href="goodies.html">שקיות הפתעה +18</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-retro active" href="contact.html">צור קשר ומפת אתר</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- Main Content Area -->
+<main id="main-content" class="section-padding">
+    <div class="container">
+
+        <!-- Intro Section -->
+        <div class="text-center max-width-700 mx-auto mb-5">
+            <span class="fs-1 d-block mb-3">✉️🗺️🧭🩹</span>
+            <h1 style="font-size: 3rem; text-shadow: 2px 2px 0px var(--color-orange);">צור קשר ומפת האתר</h1>
+            <p class="fs-5" style="color:var(--color-text-muted);">
+                רוצים לשלוח לנו הודעה, להציע משחקי רטרו מטורפים שעשינו להם עוול או סתם לברר איזה תרופות מומלץ לשים בשקית?
+                מלאו את הפרטים ונחזור אליכם במהירות הבזק! תוכלו גם להיעזר במפת האתר למטה לניווט מושלם.
+            </p>
+        </div>
+        <div class="row g-5">
+
+            <!-- SECTION 1: Neobrutalist Contact Form -->
+            <div class="col-lg-6">
+                <section aria-labelledby="form-heading">
+                    <div class="neobrutal-border p-4 bg-white" style="box-shadow:8px 8px 0px var(--color-orange);">
+                        <h2 id="form-heading" class="fs-3 mb-4" style="color:var(--color-pink); border-bottom: 2px solid var(--border-color); padding-bottom: 10px;">
+                            ✉️ שלחו לנו מכתב (לא בדואר, זה איטי)
+                        </h2>
+
+                        <form id="retro-contact-form" novalidate>
+                            <!-- Name Input -->
+                            <div class="form-group-retro">
+                                <label for="contact-name" class="form-label-retro">שם מלא: <span class="text-danger">*</span></label>
+                                <input type="text" id="contact-name" class="form-input-retro" placeholder="ישראל ישראלי" required aria-required="true">
+                            </div>
+                            <!-- Email Input -->
+                            <div class="form-group-retro">
+                                <label for="contact-email" class="form-label-retro">אימייל לחזרה: <span class="text-danger">*</span></label>
+                                <input type="email" id="contact-email" class="form-input-retro" placeholder="israel@gmail.com" required aria-required="true">
+                            </div>
+                            <!-- Date of Birth (A11y & Humorous check input) -->
+                            <div class="form-group-retro">
+                                <label for="contact-birthdate" class="form-label-retro">תאריך לידה: <span class="text-danger">*</span></label>
+                                <input type="date" id="contact-birthdate" class="form-input-retro" required aria-required="true">
+                                <div class="form-text text-muted mt-1 fs-6">
+                                    הכרחי לצורך קביעת כמות כאבי הגב והוראות ההישרדות שלכם! 😉
+                                </div>
+                            </div>
+                            <!-- Message Input -->
+                            <div class="form-group-retro">
+                                <label for="contact-message" class="form-label-retro">תוכן המכתב: <span class="text-danger">*</span></label>
+                                <textarea id="contact-message" class="form-input-retro" rows="5" placeholder="כאן כותבים את הזכרונות היפים שלכם או את המרשם לאקמול פוקוס..." required aria-required="true"></textarea>
+                            </div>
+                            <!-- Submit Button -->
+                            <div class="text-center mt-4">
+                                <button type="submit" class="btn-retro btn-retro-pink w-100 py-3 fs-5">
+                                    🚀 שלחו מכתב באהבה!
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+            <!-- SECTION 2: Hierarchical Sitemap Tree -->
+            <div class="col-lg-6">
+                <section aria-labelledby="sitemap-heading">
+                    <div class="neobrutal-border p-4" style="background-color: var(--bg-secondary); box-shadow:8px 8px 0px var(--color-purple);">
+                        <h2 id="sitemap-heading" class="fs-3 mb-4" style="color:var(--color-purple); border-bottom: 2px solid var(--border-color); padding-bottom: 10px;">
+                            🧭 מפת אתר היררכית ונגישה
+                        </h2>
+                        <p class="text-muted mb-4">עץ המבנה המלא של האתר לניווט קל במיוחד בין הדפים השונים:</p>
+                        <div class="sitemap-container">
+                            <ul class="sitemap-list" aria-label="מפת האתר">
+                                <li class="sitemap-item">
+                                    <span class="sitemap-item-main">🏠 <a href="index.html">דף הבית (index.html)</a></span>
+                                    <p class="fs-6 text-muted m-0 pr-3">דף השער המרכזי - הצגת הקונספט הנוסטלגי והשוואה הומוריסטית של פעם מול היום.</p>
+
+                                    <ul class="sitemap-sublist" aria-label="תתי דפים">
+
+                                        <!-- Sub 1: Games -->
+                                        <li class="sitemap-subitem">
+                                            <span class="fw-bold">🎲 <a href="games.html">משחקים ונהנים (games.html)</a></span>
+                                            <p class="fs-6 text-muted m-0 pr-3">גריד כרטיסיות תלת-מימדיות המציג 12 משחקי רטרו נוסטלגיים וגרסאות משודרגות למבוגרים.</p>
+                                        </li>
+                                        <!-- Sub 2: Cake & Karaoke -->
+                                        <li class="sitemap-subitem">
+                                            <span class="fw-bold">🎤🎂 <a href="cake.html">קריוקי ועוגה (cake.html)</a></span>
+                                            <p class="fs-6 text-muted m-0 pr-3">נגן קסטות רטרו מדומה עם שירים נוסטלגיים, ומתכון עוגת גן מלבנית אינטראקטיבית עם מד התקדמות.</p>
+                                        </li>
+                                        <!-- Sub 3: Goodie Bags -->
+                                        <li class="sitemap-subitem">
+                                            <span class="fw-bold">🍬 <a href="goodies.html">שקיות הפתעה +18 (goodies.html)</a></span>
+                                            <p class="fs-6 text-muted m-0 pr-3">בחירת ערכות הישרדות מוכנות או הרכבה עצמית אינטראקטיבית מלאה של שקית מותאמת אישית.</p>
+                                        </li>
+                                        <!-- Sub 4: Contact -->
+                                        <li class="sitemap-subitem">
+                                            <span class="fw-bold">✉️ <a href="contact.html">צור קשר ומפת אתר (contact.html)</a></span>
+                                            <p class="fs-6 text-muted m-0 pr-3">העמוד הנוכחי - טופס שליחת פניות נגיש והומוריסטי לצד מפת אתר מובנית.</p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="alert alert-info mt-4 neobrutal-border" style="box-shadow:3px 3px 0 #1e1a3c; border-radius:8px;">
+                            <strong>♿ נגישות מעל הכל:</strong> מפת האתר מותאמת באופן מושלם לקוראי מסך ומספקת היררכיה ברורה באמצעות תגיות רשימה מובנות ואיורים דקורטיביים.
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Shared Retro Footer -->
+<footer class="footer-retro">
+    <div class="container">
+        <nav aria-label="קישורי פוטר">
+            <div class="d-flex flex-wrap justify-content-center gap-4 mb-4 fs-5 font-heading">
+                <a href="index.html">דף הבית</a> |
+                <a href="games.html">משחקים ונהנים</a> |
+                <a href="cake.html">קריוקי ועוגה</a> |
+                <a href="goodies.html">שקיות הפתעה +18</a> |
+                <a href="contact.html">צור קשר ומפת אתר</a>
+            </div>
+        </nav>
+        <div class="footer-credit-retro">
+            <p class="fs-5 m-0">כל הזכויות שמורות © יום הולדת של פעם עם כאבי גב של היום 🩹🎈</p>
+            <p class="fs-6 mt-2 text-muted">האתר מפותח באמצעות Vanilla HTML, CSS ו-JS בלבד ללא שום צורך להזעיק אורתופד.</p>
+        </div>
+    </div>
+</footer>
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<!-- Shared interactive app controller script -->
+<script src="JS/app.js"></script>
+</body>
+</html>
