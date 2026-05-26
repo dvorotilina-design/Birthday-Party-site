@@ -290,11 +290,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // 6. Goodie Bags 18+ Custom Interactive Builder (Goodies Page)
     // ==========================================
-    // Route selection toggles
+    // Route selection elements
     const routeLazy = document.getElementById('route-lazy-card');
     const routeAdventurous = document.getElementById('route-adv-card');
     const sectionLazy = document.getElementById('section-lazy-ready');
     const sectionAdventurous = document.getElementById('section-adv-build');
+    
+    // Checkboxes inside route selection cards
+    const checkRouteLazy = document.getElementById('check-route-lazy');
+    const checkRouteAdv = document.getElementById('check-route-adv');
+    
+    // Checkboxes next to section headers
+    const checkboxLazySection = document.getElementById('checkbox-lazy-section');
+    const checkboxAdvSection = document.getElementById('checkbox-adv-section');
+    
     if (routeLazy && routeAdventurous) {
         const progressAnnounce = document.getElementById('accessibility-announcer');
 
@@ -302,23 +311,39 @@ document.addEventListener('DOMContentLoaded', () => {
             if (route === 'lazy') {
                 sectionLazy.style.display = 'block';
                 sectionAdventurous.style.display = 'none';
+                
                 routeLazy.classList.add('selected');
                 routeAdventurous.classList.remove('selected');
+                
+                if (checkRouteLazy) checkRouteLazy.checked = true;
+                if (checkRouteAdv) checkRouteAdv.checked = false;
+                if (checkboxLazySection) checkboxLazySection.checked = true;
+                if (checkboxAdvSection) checkboxAdvSection.checked = false;
+                
                 sectionLazy.scrollIntoView({ behavior: 'smooth' });
                 if (progressAnnounce) progressAnnounce.textContent = "עברתם למסלול שקיות הפתעה מוכנות מראש.";
             } else {
                 sectionLazy.style.display = 'none';
                 sectionAdventurous.style.display = 'block';
+                
                 routeLazy.classList.remove('selected');
                 routeAdventurous.classList.add('selected');
+                
+                if (checkRouteLazy) checkRouteLazy.checked = false;
+                if (checkRouteAdv) checkRouteAdv.checked = true;
+                if (checkboxLazySection) checkboxLazySection.checked = false;
+                if (checkboxAdvSection) checkboxAdvSection.checked = true;
+                
                 sectionAdventurous.scrollIntoView({ behavior: 'smooth' });
                 if (progressAnnounce) progressAnnounce.textContent = "עברתם למסלול הרכבה עצמית אינטראקטיבית של שקית הפתעה.";
             }
         };
+
+        // Click handlers for Route Selection Cards
         routeLazy.addEventListener('click', () => showRoute('lazy'));
         routeAdventurous.addEventListener('click', () => showRoute('adv'));
-        routeLazy.setAttribute('tabindex', '0');
-        routeAdventurous.setAttribute('tabindex', '0');
+        
+        // Handle keypress (Space/Enter) on Route Selection Cards
         const handleKeySelect = (e, route) => {
             if (e.key === ' ' || e.key === 'Enter') {
                 e.preventDefault();
@@ -327,63 +352,134 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         routeLazy.addEventListener('keydown', (e) => handleKeySelect(e, 'lazy'));
         routeAdventurous.addEventListener('keydown', (e) => handleKeySelect(e, 'adv'));
-    }
-    // Interactive Bag Builder Logic
-    const bagOptions = document.querySelectorAll('.bag-option-card');
-    if (bagOptions.length > 0) {
-        const itemsGrid = document.querySelector('.items-grid');
-        const visualBag = document.getElementById('visual-bag-svg');
-        const visualBagContainer = document.querySelector('.visual-bag-container');
-        const bagBadgeContainer = document.querySelector('.bag-badge-container');
-        const itemCountText = document.getElementById('bag-item-count');
-        const checkoutBtn = document.getElementById('checkout-bag-btn');
-        const progressAnnounce = document.getElementById('accessibility-announcer');
-        // Selected bag type
-        let selectedBagType = 'kraft';
-        // Array of selected items
-        let selectedItems = [];
-        // Bag SVG Paths or styles depending on choice
-        const bagStyles = {
-            'kraft': {
-                color: '#d2b48c', // Light brown paper
-                pattern: 'repeating-linear-gradient(45deg, #c3a278, #c3a278 10px, #d2b48c 10px, #d2b48c 20px)'
-            },
-            'plastic': {
-                color: '#ff2e93', // Fuchsia plastic
-                pattern: 'radial-gradient(circle, #ff2e93 20%, #7b2cbf 80%)'
-            },
-            'neon': {
-                color: '#00e5c9', // Turquoise neon pouch
-                pattern: 'linear-gradient(135deg, #00e5c9 0%, #ffd166 100%)'
-            }
-        };
-        const updateVisualBagColor = (bagType) => {
-            selectedBagType = bagType;
-            const bagStyle = bagStyles[bagType];
 
-            // Update background of SVG or style
-            const paths = visualBag.querySelectorAll('path');
-            if (paths.length > 0) {
-                paths.forEach(path => {
-                    path.style.fill = bagStyle.color;
-                    path.style.stroke = '#1e1a3c';
-                });
+        // Handle clicks on the section header checkboxes
+        if (checkboxLazySection) {
+            checkboxLazySection.addEventListener('change', (e) => {
+                if (e.target.checked) {
+                    showRoute('lazy');
+                } else {
+                    showRoute('adv');
+                }
+            });
+        }
+        if (checkboxAdvSection) {
+            checkboxAdvSection.addEventListener('change', (e) => {
+                if (e.target.checked) {
+                    showRoute('adv');
+                } else {
+                    showRoute('lazy');
+                }
+            });
+        }
+    }
+
+    // Modal elements
+    const modal = document.getElementById('retro-checkout-modal');
+    
+    // Fireworks celebration function using Canvas Confetti
+    const triggerConfettiCelebration = () => {
+        if (typeof confetti === 'function') {
+            const duration = 4 * 1000;
+            const animationEnd = Date.now() + duration;
+            const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 11000 };
+
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
             }
-        };
-        bagOptions.forEach(card => {
+
+            const interval = setInterval(function() {
+                const timeLeft = animationEnd - Date.now();
+
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+
+                const particleCount = 50 * (timeLeft / duration);
+                // firework bursts from left and right sides
+                confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+                confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+            }, 250);
+        }
+    };
+
+    // Route A: Let's Go buttons logic
+    const lazyGoButtons = document.querySelectorAll('.btn-lazy-go');
+    if (lazyGoButtons.length > 0 && modal) {
+        const modalTitle = document.getElementById('modal-title');
+        const modalBagImg = document.getElementById('modal-checkout-bag-img');
+        const modalBagName = document.getElementById('modal-checkout-bag-name');
+        const modalCount = document.getElementById('modal-checkout-count');
+        const modalList = document.getElementById('modal-checkout-list');
+        const closeModalBtn = modal.querySelector('.btn-close-retro');
+
+        lazyGoButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const bagName = btn.getAttribute('data-bag-name');
+                const bagImg = btn.getAttribute('data-bag-img');
+                const bagItemsStr = btn.getAttribute('data-bag-items');
+                const itemsList = bagItemsStr.split(', ');
+
+                // Update Modal Content
+                if (modalTitle) modalTitle.textContent = `🎉 השקית שלכם מוכנה: ${bagName}!`;
+                if (modalBagImg) modalBagImg.setAttribute('src', bagImg);
+                if (modalBagName) modalBagName.textContent = bagName;
+                if (modalCount) modalCount.textContent = itemsList.length.toString();
+
+                if (modalList) {
+                    modalList.innerHTML = '';
+                    itemsList.forEach(item => {
+                        const li = document.createElement('li');
+                        li.style.padding = '8px 0';
+                        li.style.borderBottom = '1px dashed #ddd';
+                        li.style.fontWeight = 'bold';
+                        li.style.fontSize = '1.1rem';
+                        li.textContent = `🎁 ${item}`;
+                        modalList.appendChild(li);
+                    });
+                }
+
+                // Open Modal
+                modal.style.display = 'flex';
+                modal.setAttribute('aria-hidden', 'false');
+                if (closeModalBtn) closeModalBtn.focus();
+
+                // Trigger Fireworks Celebration!
+                triggerConfettiCelebration();
+            });
+        });
+    }
+
+    // Route B: Custom Bag Builder Logic
+    const emptyBagCards = document.querySelectorAll('.bag-empty-card');
+    let selectedBagType = 'kraft';
+    let selectedBagName = 'שקית נייר קראפט 🤎';
+    let selectedBagImg = 'Images birthday site/surprise_bag_empty.png';
+    let selectedItems = [];
+
+    if (emptyBagCards.length > 0) {
+        const progressAnnounce = document.getElementById('accessibility-announcer');
+
+        emptyBagCards.forEach(card => {
             card.setAttribute('tabindex', '0');
 
             const selectBag = () => {
-                bagOptions.forEach(c => c.classList.remove('selected'));
+                emptyBagCards.forEach(c => {
+                    c.classList.remove('selected');
+                    c.setAttribute('aria-checked', 'false');
+                });
                 card.classList.add('selected');
+                card.setAttribute('aria-checked', 'true');
 
-                const type = card.getAttribute('data-bag-type');
-                updateVisualBagColor(type);
+                selectedBagType = card.getAttribute('data-bag-type');
+                selectedBagName = card.getAttribute('data-bag-name');
+                selectedBagImg = card.getAttribute('data-bag-img');
 
                 if (progressAnnounce) {
-                    progressAnnounce.textContent = `בחרת בשקית סוג: ${card.querySelector('h4').textContent.trim()}.`;
+                    progressAnnounce.textContent = `בחרת בשקית ריקה סוג: ${selectedBagName}.`;
                 }
             };
+
             card.addEventListener('click', selectBag);
             card.addEventListener('keydown', (e) => {
                 if (e.key === ' ' || e.key === 'Enter') {
@@ -392,75 +488,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
-        // Particle effect when item is added
-        const playAddParticle = (buttonElement, emoji) => {
-            const particle = document.createElement('div');
-            particle.className = 'flying-particle';
-            particle.textContent = emoji;
+    }
 
-            // Get starting coordinates
-            const startRect = buttonElement.getBoundingClientRect();
-            particle.style.left = `${startRect.left + startRect.width / 2}px`;
-            particle.style.top = `${startRect.top + startRect.height / 2}px`;
+    // Item selection logic
+    const itemWhiteCards = document.querySelectorAll('.item-white-card');
+    const checkoutBtn = document.getElementById('checkout-bag-btn');
 
-            document.body.appendChild(particle);
+    if (itemWhiteCards.length > 0 && checkoutBtn) {
+        const progressAnnounce = document.getElementById('accessibility-announcer');
 
-            // Get destination coordinates (visual bag container)
-            const destRect = visualBagContainer.getBoundingClientRect();
-            const destX = destRect.left + destRect.width / 2;
-            const destY = destRect.top + destRect.height / 2;
-
-            // Animate particle to bag
-            setTimeout(() => {
-                particle.style.transform = `translate(${destX - startRect.left}px, ${destY - startRect.top}px) scale(0.5)`;
-                particle.style.opacity = '0';
-            }, 50);
-
-            // Clean up and shake bag
-            setTimeout(() => {
-                particle.remove();
-                visualBagContainer.classList.add('shake-bag');
-                setTimeout(() => {
-                    visualBagContainer.classList.remove('shake-bag');
-                }, 500);
-            }, 650);
-        };
-        // Add click to add item grid
-        const itemCards = document.querySelectorAll('.item-add-card');
-        itemCards.forEach(card => {
+        itemWhiteCards.forEach(card => {
             card.setAttribute('tabindex', '0');
 
             const toggleItem = () => {
-                const itemTitle = card.querySelector('.item-add-title').textContent.trim();
-                const itemIcon = card.querySelector('.item-add-icon').textContent.trim();
                 const itemId = card.getAttribute('data-item-id');
+                const itemName = card.getAttribute('data-item-name');
+                const itemEmoji = card.getAttribute('data-item-emoji');
 
                 const index = selectedItems.findIndex(i => i.id === itemId);
 
                 if (index === -1) {
                     // Add item
-                    selectedItems.push({ id: itemId, title: itemTitle, icon: itemIcon });
-                    card.classList.add('in-bag');
-                    card.querySelector('.btn-add-item').textContent = 'הסר מהשקית';
-
-                    playAddParticle(card, itemIcon);
-
+                    selectedItems.push({ id: itemId, name: itemName, emoji: itemEmoji });
+                    card.classList.add('selected');
                     if (progressAnnounce) {
-                        progressAnnounce.textContent = `${itemTitle} נוסף לשקית ההפתעה שלכם. סה"כ פריטים: ${selectedItems.length}`;
+                        progressAnnounce.textContent = `${itemName} נוסף לשקית ההפתעה שלכם. סה"כ פריטים: ${selectedItems.length}`;
                     }
                 } else {
                     // Remove item
                     selectedItems.splice(index, 1);
-                    card.classList.remove('in-bag');
-                    card.querySelector('.btn-add-item').textContent = 'הוסף לשקית';
-
+                    card.classList.remove('selected');
                     if (progressAnnounce) {
-                        progressAnnounce.textContent = `${itemTitle} הוסר משקית ההפתעה שלכם. סה"כ פריטים: ${selectedItems.length}`;
+                        progressAnnounce.textContent = `${itemName} הוסר משקית ההפתעה שלכם. סה"כ פריטים: ${selectedItems.length}`;
                     }
                 }
 
-                updateBagBadgeList();
+                // Enable/Disable checkout button
+                checkoutBtn.disabled = selectedItems.length === 0;
             };
+
             card.addEventListener('click', toggleItem);
             card.addEventListener('keydown', (e) => {
                 if (e.key === ' ' || e.key === 'Enter') {
@@ -469,98 +535,68 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
-        const updateBagBadgeList = () => {
-            // Clear badges
-            bagBadgeContainer.innerHTML = '';
 
-            if (selectedItems.length === 0) {
-                bagBadgeContainer.innerHTML = '<span class="text-muted" style="font-size:0.95rem;">השקית עדיין ריקה... לחצו על פריטים למעלה כדי למלא אותה! 🍭</span>';
-                itemCountText.textContent = '0';
-                checkoutBtn.disabled = true;
-                return;
-            }
-
-            checkoutBtn.disabled = false;
-            itemCountText.textContent = selectedItems.length;
-
-            selectedItems.forEach(item => {
-                const badge = document.createElement('span');
-                badge.className = 'bag-badge-item';
-                badge.innerHTML = `
-          <span>${item.icon} ${item.title}</span>
-          <button class="btn-remove-badge" data-item-id="${item.id}" aria-label="הסר ${item.title}">&times;</button>
-        `;
-
-                // Remove item event from badge
-                badge.querySelector('.btn-remove-badge').addEventListener('click', (e) => {
-                    e.stopPropagation(); // Stop trigger card selection
-                    const itemId = e.target.getAttribute('data-item-id');
-                    // Find matching card and trigger click to remove it
-                    const matchingCard = document.querySelector(`.item-add-card[data-item-id="${itemId}"]`);
-                    if (matchingCard) {
-                        matchingCard.click();
-                    }
-                });
-
-                bagBadgeContainer.appendChild(badge);
-            });
-        };
-        // Open Modal Checkout Summary
-        const modal = document.getElementById('retro-checkout-modal');
-        if (modal && checkoutBtn) {
+        // Checkout button click handler for Custom Bag
+        if (modal) {
+            const modalTitle = document.getElementById('modal-title');
+            const modalBagImg = document.getElementById('modal-checkout-bag-img');
+            const modalBagName = document.getElementById('modal-checkout-bag-name');
+            const modalCount = document.getElementById('modal-checkout-count');
+            const modalList = document.getElementById('modal-checkout-list');
             const closeModalBtn = modal.querySelector('.btn-close-retro');
-            const checkoutList = document.getElementById('modal-checkout-list');
-            const checkoutCount = document.getElementById('modal-checkout-count');
-            const checkoutBagName = document.getElementById('modal-checkout-bag-name');
+
             checkoutBtn.addEventListener('click', () => {
-                // Build checkout summary list
-                checkoutList.innerHTML = '';
-                selectedItems.forEach(item => {
-                    const li = document.createElement('li');
-                    li.style.padding = '8px 0';
-                    li.style.borderBottom = '1px dashed #ddd';
-                    li.style.fontWeight = 'bold';
-                    li.style.fontSize = '1.1rem';
-                    li.textContent = `${item.icon} ${item.title}`;
-                    checkoutList.appendChild(li);
-                });
-                const bagLabelText = document.querySelector(`.bag-option-card[data-bag-type="${selectedBagType}"] h4`).textContent.trim();
-                checkoutBagName.textContent = bagLabelText;
-                checkoutCount.textContent = selectedItems.length;
-                // Show Modal
+                // Update Modal Content
+                if (modalTitle) modalTitle.textContent = `🎉 השקית המותאמת שלכם מוכנה!`;
+                if (modalBagImg) modalBagImg.setAttribute('src', selectedBagImg);
+                if (modalBagName) modalBagName.textContent = selectedBagName;
+                if (modalCount) modalCount.textContent = selectedItems.length.toString();
+
+                if (modalList) {
+                    modalList.innerHTML = '';
+                    selectedItems.forEach(item => {
+                        const li = document.createElement('li');
+                        li.style.padding = '8px 0';
+                        li.style.borderBottom = '1px dashed #ddd';
+                        li.style.fontWeight = 'bold';
+                        li.style.fontSize = '1.1rem';
+                        li.textContent = `🎁 ${item.emoji} ${item.name}`;
+                        modalList.appendChild(li);
+                    });
+                }
+
+                // Open Modal
                 modal.style.display = 'flex';
                 modal.setAttribute('aria-hidden', 'false');
+                if (closeModalBtn) closeModalBtn.focus();
 
-                // Focus first element inside modal for accessibility (WAI-ARIA)
-                closeModalBtn.focus();
-
-                if (progressAnnounce) {
-                    progressAnnounce.textContent = "נפתח סיכום שקית ההפתעה בהתאמה אישית. השקית שלך מוכנה!";
-                }
+                // Trigger Fireworks Celebration!
+                triggerConfettiCelebration();
             });
+
+            // Close Modal logic
             const closeModal = () => {
                 modal.style.display = 'none';
                 modal.setAttribute('aria-hidden', 'true');
-                checkoutBtn.focus(); // Restore focus
+                checkoutBtn.focus();
             };
-            closeModalBtn.addEventListener('click', closeModal);
 
-            // Close on clicking overlay
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', closeModal);
+            }
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
                     closeModal();
                 }
             });
-            // Escape key to close modal
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && modal.style.display === 'flex') {
                     closeModal();
                 }
             });
         }
-        // Initialize list
-        updateBagBadgeList();
     }
+
     // ==========================================
     // 7. Contact Form Humorous Validation (Contact Page)
     // ==========================================

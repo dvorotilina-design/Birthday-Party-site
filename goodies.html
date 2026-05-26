@@ -58,7 +58,7 @@
         <!-- Page Title -->
         <div class="text-center max-width-700 mx-auto mb-5">
             <span class="fs-1 d-block mb-3">🍬🎁🧴🩹</span>
-            <h1 style="font-size: 3rem; text-shadow: 2px 2px 0px var(--color-turquoise);">מי רצה שקית הפתעה ולא קיבל?</h1>
+            <h1 class="font-chava" style="font-size: 3rem; text-shadow: 2px 2px 0px var(--color-turquoise);">מי רצה שקית הפתעה ולא קיבל?</h1>
             <p class="fs-5" style="color:var(--color-text-muted);">
                 הגיע הזמן להחזיר את הטקס הכי שווה ושמח של הילדות לחגיגות של הגדולים!
                 כי לא משנה בני כמה אתם היום, חוקי יום ההולדת הישנים תמיד תקפים: <strong>מי שלא קיבל שקית הפתעה, כאילו לא היה במסיבה מעולם!</strong>
@@ -67,290 +67,210 @@
         <!-- Route Selection Cards (Interactive Pathways) -->
         <div class="row g-4 justify-content-center mb-5" role="region" aria-label="בחירת מסלול שקית">
             <div class="col-md-5">
-                <div id="route-lazy-card" class="card-retro route-card selected" aria-label="מסלול העצלן האחראי: בחירת שקית מוכנה">
-                    <span class="route-icon">😴</span>
-                    <h3 style="font-size:1.6rem;">מסלול א': העצלן האחראי</h3>
-                    <p class="text-muted">
-                        לא רוצים להתאמץ? בחרו שקית נוסטלגיה והישרדות בוגרת מתוך ערכות מוכנות מראש ומפוצצות בהפתעות.
-                    </p>
-                    <button class="btn-retro btn-retro-pink mt-3 w-100">תראו לי שקיות מוכנות ⬅️</button>
+                <div id="route-lazy-card" class="route-card selected" aria-label="מסלול א': העצלן האחראי" tabindex="0">
+                    <div>
+                        <h3 style="font-size:1.6rem;" class="font-chava">מסלול א': העצלן האחראי</h3>
+                        <p class="text-muted mb-0">"בחר שקית מוכנה לא דורש להתאמץ"</p>
+                    </div>
+                    <div class="route-card-img-container">
+                        <img src="Images birthday site/Bag_1.png" alt="תמונה של כרטיסיה מסלול א" class="img-fluid">
+                    </div>
+                    <div class="route-selection-toggle">
+                        <input type="checkbox" id="check-route-lazy" class="route-checkbox" checked tabindex="-1">
+                        <span class="fw-bold">תראו לי שקיות מוכנות!</span>
+                    </div>
                 </div>
             </div>
             <div class="col-md-5">
-                <div id="route-adv-card" class="card-retro route-card" aria-label="מסלול ההרפתקן: הרכבה עצמית של שקית">
-                    <span class="route-icon">🤠</span>
-                    <h3 style="font-size:1.6rem;">מסלול ב': ההרפתקן</h3>
-                    <p class="text-muted">
-                        אוהבים אתגרים ויש לכם כוח? יאללה, בואו נרכיב שקית הפתעה אישית ומותאמת בדיוק לחברים או לעצמכם!
-                    </p>
-                    <button class="btn-retro btn-retro-turquoise mt-3 w-100">יאללה בואו נרכיב לבד! ⬅️</button>
+                <div id="route-adv-card" class="route-card" aria-label="מסלול ב': ההרפתקן" tabindex="0">
+                    <div>
+                        <h3 style="font-size:1.6rem;" class="font-chava">מסלול ב': ההרפתקן</h3>
+                        <p class="text-muted mb-0">"הרכיבו את השקית לבד"</p>
+                    </div>
+                    <div class="route-card-img-container">
+                        <img src="Images birthday site/Bag_2.png" alt="תמונה של כרטיסיה מסלול ב" class="img-fluid">
+                    </div>
+                    <div class="route-selection-toggle">
+                        <input type="checkbox" id="check-route-adv" class="route-checkbox" tabindex="-1">
+                        <span class="fw-bold">יאללה בואו נרכיב!</span>
+                    </div>
                 </div>
             </div>
         </div>
         <!-- PATHWAY A: Lazy Ready-made Bags (Section 1) -->
         <section id="section-lazy-ready" class="mb-5" aria-labelledby="lazy-title">
-            <div class="text-center mb-4">
-                <h2 id="lazy-title" style="font-size: 2.2rem;">🎁 שקיות הפתעה מוכנות מראש</h2>
-                <p class="text-muted fs-5">הערכות המוכנות שלנו שחוסכות לכם זמן ודואגות לכם להכל:</p>
+            <div class="section-toggle-header">
+                <input type="checkbox" id="checkbox-lazy-section" class="route-checkbox" checked style="width: 28px; height: 28px;">
+                <h2 id="lazy-title" class="font-chava m-0" style="font-size: 2.2rem;">מסלול הראשון: "העצלן האחראי" - שקיות מוכנות מראש</h2>
             </div>
+            <p class="text-center text-muted fs-5 mb-4">שלוש שקיות מוכנות לבחירה</p>
+
             <div class="row g-4">
                 <!-- Bag 1: Hangover -->
                 <div class="col-md-4">
                     <div class="card-retro card-retro-pink">
-                        <div class="card-icon-retro">🩹</div>
-                        <h3 style="font-size: 1.4rem;">ערכת \"החמרמורת\" 🩺</h3>
+                        <div class="bag-card-img-container">
+                            <img src="Images birthday site/surprise_bag_full1.png" alt="ערכת החמרמורת" class="img-fluid">
+                        </div>
+                        <h3 style="font-size: 1.4rem;" class="font-chava">ערכת "החמרמורת" 🩺</h3>
                         <p class="text-muted flex-grow-1">
-                            ערכת הישרדות מושלמת לבוקר שאחרי המסיבה! שומרת עליכם מתפקדים ומטפלת בכל כאבי הגב והראש.
+                            ערכת הישרדות מושלמת לבוקר שאחרי המסיבה! שומרת עליכם מתפקדים ומטפלת בכל כאבי הגב והראש. השקית כוללת: אדוויל, משקפי שמש שחורות, בקבוק מים, פלסטרים וקופסת קפה.
                         </p>
-                        <ul class="mb-4 text-start fw-bold" style="list-style-type: '⚡ ';">
-                            <li>אדוויל או אקמול פוקוס</li>
-                            <li>בקבוק מים מיניאטורי קטן</li>
-                            <li>פלסטרים צבעוניים לפציעות ביר פונג</li>
-                            <li>שקיק קפה שחור חזק במיוחד</li>
-                            <li>משקפי שמש שחורים להסתרת העיניים</li>
-                        </ul>
-                        <button class="btn-retro btn-retro-pink w-100" onclick="alert('בחרת בערכת החמרמורת! התרופות כבר בדרך לארון שלך. 💊')">בחר ערכה זו ⬅️</button>
+                        <button class="btn-retro btn-retro-pink w-100 py-2 btn-lazy-go" data-bag-name="ערכת החמרמורת" data-bag-img="Images birthday site/surprise_bag_full1.png" data-bag-items="אדוויל, משקפי שמש שחורות, בקבוק מים, פלסטרים, קופסת קפה">Let's Go!</button>
                     </div>
                 </div>
                 <!-- Bag 2: Eternal Kid -->
                 <div class="col-md-4">
                     <div class="card-retro card-retro-yellow">
-                        <div class="card-icon-retro">🧸</div>
-                        <h3 style="font-size: 1.4rem;">ערכת \"הילד הנצחי\" 🍭</h3>
+                        <div class="bag-card-img-container">
+                            <img src="Images birthday site/surprise_bag_full2.png" alt="ערכת הילד הנצחי" class="img-fluid">
+                        </div>
+                        <h3 style="font-size: 1.4rem;" class="font-chava">ערכת "הילד הנצחי" 🍭</h3>
                         <p class="text-muted flex-grow-1">
-                            מיועדת לאלו שמסרבים להתבגר בכל תוקף ורוצים לחזור ישירות למסיבות הניינטיז האהובות!
+                            מיועדת לאלו שמסרבים להתבגר בכל תוקף ורוצים לחזור ישירות למסיבות הניינטיז האהובות! השקית כוללת: קעקועי מים זמניים, משרוקיות, טבעות סוכריה ומלא גומי!
                         </p>
-                        <ul class="mb-4 text-start fw-bold" style="list-style-type: '🍬 ';">
-                            <li>קעקועי מים זמניים בעיצובי רטרו</li>
-                            <li>סוכריות גומי ארוכות ונחשים</li>
-                            <li>טבעות סוכרייה מתוקות על האצבע</li>
-                            <li>משרוקיות פלסטיק צבעוניות ומרעישות</li>
-                            <li>מסטיקים בקופסת סיגריות של פעם</li>
-                        </ul>
-                        <button class="btn-retro btn-retro-yellow w-100" onclick="alert('בחרת בערכת הילד הנצחי! היזהרו לא לעשות רעש חזק עם המשרוקית. 🎷')">בחר ערכה זו ⬅️</button>
+                        <button class="btn-retro btn-retro-yellow w-100 py-2 btn-lazy-go" data-bag-name="ערכת הילד הנצחי" data-bag-img="Images birthday site/surprise_bag_full2.png" data-bag-items="קעקועי מים זמניים, משרוקיות, טבעות סוכרייה, סוכריות גומי">Let's Go!</button>
                     </div>
                 </div>
                 <!-- Bag 3: Bourgeois Pampered -->
                 <div class="col-md-4">
                     <div class="card-retro card-retro-purple">
-                        <div class="card-icon-retro">☕</div>
-                        <h3 style="font-size: 1.4rem;">ערכת \"הבורגני המפונק\" 🧖</h3>
+                        <div class="bag-card-img-container">
+                            <img src="Images birthday site/surprise_bag_full3.png" alt="ערכת הבורגני המפונק" class="img-fluid">
+                        </div>
+                        <h3 style="font-size: 1.4rem;" class="font-chava">ערכת "הבורגני המפונק" 🧖</h3>
                         <p class="text-muted flex-grow-1">
-                            פינוק מושלם למי שרוצה לחגוג יום הולדת בקצב רגוע, עטוף בנוחות מפוארת של בית.
+                            פינוק מושלם למי שרוצה לחגוג יום הולדת בקצב רגוע, עטוף בנוחות מפוארת של בית. השקית כוללת: שוקולד מריר, בקבוק אלכוהול קטן, גרביים עבות ומסכת פנים (אבל לא הזאת שחשבתם עליה).
                         </p>
-                        <ul class="mb-4 text-start fw-bold" style="list-style-type: '✨ ';">
-                            <li>שוקולד מריר איכותי 70%</li>
-                            <li>בקבוקון אלכוהול מיניאטורי מפנק</li>
-                            <li>מסכת בד מזינה ומרגיעה לפנים</li>
-                            <li>גרבי בית עבות, פרוותיות ומחממות</li>
-                            <li>תה צמחים מרגיע בניחוח קמומיל</li>
-                        </ul>
-                        <button class="btn-retro btn-retro-purple w-100" onclick="alert('בחרת בערכת הבורגני המפונק! תהנו מהפינוק בתוך הגרביים העבות! 🧦')">בחר ערכה זו ⬅️</button>
+                        <button class="btn-retro btn-retro-purple w-100 py-2 btn-lazy-go" data-bag-name="ערכת הבורגני המפונק" data-bag-img="Images birthday site/surprise_bag_full3.png" data-bag-items="שוקולד מריר, בקבוק אלכוהול קטן, גרביים עבות, מסכת פנים, תה צמחים">Let's Go!</button>
                     </div>
                 </div>
+            </div>
+            <div class="text-center mt-4 text-muted fw-bold">
+                בלחיצה על אחד הכפתורים יקפוץ פופ אפ של התמונה שנבחרה וזיקוקים בצדדים 🎉
             </div>
         </section>
         <!-- PATHWAY B: Interactive Bag Builder (Section 2 - Hidden by Default) -->
         <section id="section-adv-build" style="display:none;" aria-labelledby="adv-title">
-            <div class="text-center mb-5">
-                <h2 id="adv-title" style="font-size: 2.2rem;">🤠 הרכיבו שקית הפתעה בעצמכם!</h2>
-                <p class="text-muted fs-5">עקבו אחר השלבים ומלאו את שקית הרטרו שלכם במיטב הפריטים הנוסטלגיים:</p>
+            <div class="section-toggle-header">
+                <input type="checkbox" id="checkbox-adv-section" class="route-checkbox" style="width: 28px; height: 28px;">
+                <h2 id="adv-title" class="font-chava m-0" style="font-size: 2.2rem;">מסלול השני: "ההרפתקן" - הרכבה עצמית של שקית</h2>
             </div>
+            
             <!-- STEP 1: Choose Bag Style -->
-            <h3 class="fs-4 mb-3" style="color:var(--color-pink);">שלב 1: בחירת סוג השקית 🛍️</h3>
-            <div class="bag-selector-grid" role="radiogroup" aria-label="סוג שקית הפתעה">
-
-                <!-- Kraft Bag -->
-                <div class="bag-option-card selected" data-bag-type="kraft" role="radio" aria-checked="true">
-                    <!-- Inline SVG for Kraft paper bag -->
-                    <svg class="bag-icon-svg" viewBox="0 0 100 120" id="svg-kraft">
-                        <path d="M20 30 L80 30 L85 110 L15 110 Z" fill="#d2b48c" stroke="#1e1a3c" stroke-width="4"/>
-                        <path d="M35 30 C35 15, 65 15, 65 30" fill="none" stroke="#1e1a3c" stroke-width="4"/>
-                        <line x1="20" y1="50" x2="80" y2="50" stroke="#1e1a3c" stroke-width="2"/>
-                        <line x1="17" y1="70" x2="83" y2="70" stroke="#1e1a3c" stroke-width="2"/>
-                        <line x1="15" y1="90" x2="85" y2="90" stroke="#1e1a3c" stroke-width="2"/>
-                    </svg>
-                    <h4>שקית נייר קראפט 🤎</h4>
-                    <p class="text-muted fs-6 m-0">שקית נייר חומה ונוסטלגית מפוספסת</p>
+            <h3 class="fs-4 mb-3 font-chava" style="color:var(--color-pink);">שלב 1: בחירת סוג השקית 🛍️</h3>
+            <div class="row g-4 mb-5" role="radiogroup" aria-label="סוג שקית הפתעה">
+                <!-- Empty Bag 1 -->
+                <div class="col-md-4">
+                    <div class="bag-empty-card selected" data-bag-type="kraft" data-bag-name="שקית נייר קראפט 🤎" data-bag-img="Images birthday site/surprise_bag_empty.png" role="radio" aria-checked="true">
+                        <img src="Images birthday site/surprise_bag_empty.png" alt="שקית נייר קראפט" class="img-fluid">
+                        <h4 class="font-chava">דוגמא שקית ריקה 1</h4>
+                        <p class="text-muted fs-6 m-0">שקית נייר קראפט 🤎</p>
+                    </div>
                 </div>
-                <!-- Plastic Bag -->
-                <div class="bag-option-card" data-bag-type="plastic" role="radio" aria-checked="false">
-                    <!-- Inline SVG for Plastic neon bag -->
-                    <svg class="bag-icon-svg" viewBox="0 0 100 120" id="svg-plastic">
-                        <path d="M15 25 L85 25 L90 110 L10 110 Z" fill="#ff2e93" stroke="#1e1a3c" stroke-width="4"/>
-                        <path d="M40 25 L40 40 L60 40 L60 25" fill="none" stroke="#1e1a3c" stroke-width="4"/>
-                        <polygon points="50,55 53,62 60,63 55,68 56,75 50,71 44,75 45,68 40,63 47,62" fill="#00e5c9" stroke="#1e1a3c" stroke-width="2"/>
-                    </svg>
-                    <h4>שקית פלסטיק רטרו 💖</h4>
-                    <p class="text-muted fs-6 m-0">שקית פלסטיק ורודה בוהקת עם כוכב</p>
+                <!-- Empty Bag 2 -->
+                <div class="col-md-4">
+                    <div class="bag-empty-card" data-bag-type="plastic" data-bag-name="שקית פלסטיק רטרו 💖" data-bag-img="Images birthday site/surprise_bag_empty2.png" role="radio" aria-checked="false">
+                        <img src="Images birthday site/surprise_bag_empty2.png" alt="שקית פלסטיק רטרו" class="img-fluid">
+                        <h4 class="font-chava">דוגמא שקית ריקה 2</h4>
+                        <p class="text-muted fs-6 m-0">שקית פלסטיק רטרו 💖</p>
+                    </div>
                 </div>
-                <!-- Neon Zipper Bag -->
-                <div class="bag-option-card" data-bag-type="neon" role="radio" aria-checked="false">
-                    <!-- Inline SVG for Neon pouch -->
-                    <svg class="bag-icon-svg" viewBox="0 0 100 120" id="svg-neon">
-                        <path d="M10 40 L90 40 L85 105 L15 105 Z" fill="#00e5c9" stroke="#1e1a3c" stroke-width="4"/>
-                        <rect x="25" y="30" width="50" height="10" fill="#ffd166" stroke="#1e1a3c" stroke-width="3"/>
-                        <circle cx="50" cy="35" r="3" fill="#1e1a3c"/>
-                    </svg>
-                    <h4>פאוץ' נאון זוהר 💚</h4>
-                    <p class="text-muted fs-6 m-0">פאוץ' טורקיז זוהר אופנתי במיוחד</p>
+                <!-- Empty Bag 3 -->
+                <div class="col-md-4">
+                    <div class="bag-empty-card" data-bag-type="neon" data-bag-name="פאוץ' נאון זוהר 💚" data-bag-img="Images birthday site/surprise_bag_empty3.png" role="radio" aria-checked="false">
+                        <img src="Images birthday site/surprise_bag_empty3.png" alt="פאוץ' נאון זוהר" class="img-fluid">
+                        <h4 class="font-chava">דוגמא שקית ריקה 3</h4>
+                        <p class="text-muted fs-6 m-0">פאוץ' נאון זוהר 💚</p>
+                    </div>
                 </div>
             </div>
+
             <!-- STEP 2: Fill the Bag -->
-            <h3 class="fs-4 mb-3" style="color:var(--color-pink);">שלב 2: מילוי השקית בהפתעות! 🍬</h3>
-            <div class="builder-layout">
-
-                <!-- Items Gallery Grid (Left) -->
-                <div>
-                    <p class="text-muted mb-4 fs-5">לחצו על הפריטים שברצונכם להוסיף לשקית ההפתעה שלכם:</p>
-
-                    <div class="items-grid" role="region" aria-label="פריטים למילוי השקית">
-
-                        <!-- Item 1 -->
-                        <div class="item-add-card" data-item-id="item1">
-                            <span class="item-add-icon">🐍</span>
-                            <span class="item-add-title">גומי נחשים ארוכים</span>
-                            <button class="btn-add-item">הוסף לשקית</button>
-                        </div>
-                        <!-- Item 2 -->
-                        <div class="item-add-card" data-item-id="item2">
-                            <span class="item-add-icon">💊</span>
-                            <span class="item-add-title">אדוויל או אקמול פוקוס</span>
-                            <button class="btn-add-item">הוסף לשקית</button>
-                        </div>
-                        <!-- Item 3 -->
-                        <div class="item-add-card" data-item-id="item3">
-                            <span class="item-add-icon">🍾</span>
-                            <span class="item-add-title">בקבוק אלכוהול מיני</span>
-                            <button class="btn-add-item">הוסף לשקית</button>
-                        </div>
-                        <!-- Item 4 -->
-                        <div class="item-add-card" data-item-id="item4">
-                            <span class="item-add-icon">👀</span>
-                            <span class="item-add-title">רפידות ג'ל לעיניים</span>
-                            <button class="btn-add-item">הוסף לשקית</button>
-                        </div>
-                        <!-- Item 5 -->
-                        <div class="item-add-card" data-item-id="item5">
-                            <span class="item-add-icon">🧜</span>
-                            <span class="item-add-title">קעקועי מים זמניים</span>
-                            <button class="btn-add-item">הוסף לשקית</button>
-                        </div>
-                        <!-- Item 6 -->
-                        <div class="item-add-card" data-item-id="item6">
-                            <span class="item-add-icon">🧖</span>
-                            <span class="item-add-title">מסכת בד לפנים</span>
-                            <button class="btn-add-item">הוסף לשקית</button>
-                        </div>
-                        <!-- Item 7 -->
-                        <div class="item-add-card" data-item-id="item7">
-                            <span class="item-add-icon">☕</span>
-                            <span class="item-add-title">שקיות קפה איכותי</span>
-                            <button class="btn-add-item">הוסף לשקית</button>
-                        </div>
-                        <!-- Item 8 -->
-                        <div class="item-add-card" data-item-id="item8">
-                            <span class="item-add-icon">🗝️</span>
-                            <span class="item-add-title">פותחן בקבוקים רטרו</span>
-                            <button class="btn-add-item">הוסף לשקית</button>
-                        </div>
-                        <!-- Item 9 -->
-                        <div class="item-add-card" data-item-id="item9">
-                            <span class="item-add-icon">🧦</span>
-                            <span class="item-add-title">גרבי בית עם הדפסים</span>
-                            <button class="btn-add-item">הוסף לשקית</button>
-                        </div>
-                        <!-- Item 10 -->
-                        <div class="item-add-card" data-item-id="item10">
-                            <span class="item-add-icon">🌿</span>
-                            <span class="item-add-title">תה צמחים מרגיע</span>
-                            <button class="btn-add-item">הוסף לשקית</button>
-                        </div>
-                        <!-- Item 11 -->
-                        <div class="item-add-card" data-item-id="item11">
-                            <span class="item-add-icon">💿</span>
-                            <span class="item-add-title">תחתית לכוס קפה רטרו</span>
-                            <button class="btn-add-item">הוסף לשקית</button>
-                        </div>
-                        <!-- Item 12 -->
-                        <div class="item-add-card" data-item-id="item12">
-                            <span class="item-add-icon">👓</span>
-                            <span class="item-add-title">מטלית ניקוי למשקפיים</span>
-                            <button class="btn-add-item">הוסף לשקית</button>
-                        </div>
-                        <!-- Item 13 -->
-                        <div class="item-add-card" data-item-id="item13">
-                            <span class="item-add-icon">🕶️</span>
-                            <span class="item-add-title">משקפי שמש שחורים</span>
-                            <button class="btn-add-item">הוסף לשקית</button>
-                        </div>
-                        <!-- Item 14 -->
-                        <div class="item-add-card" data-item-id="item14">
-                            <span class="item-add-icon">🍫</span>
-                            <span class="item-add-title">שוקולד מריר מפנק</span>
-                            <button class="btn-add-item">הוסף לשקית</button>
-                        </div>
-                        <!-- Item 15 -->
-                        <div class="item-add-card" data-item-id="item15">
-                            <span class="item-add-icon">🚬</span>
-                            <span class="item-add-title">מסטיק סיגריות נוסטלגי</span>
-                            <button class="btn-add-item">הוסף לשקית</button>
-                        </div>
+            <h3 class="fs-4 mb-3 font-chava" style="color:var(--color-pink);">שלב 2: מילוי השקית בהפתעות! 🍬</h3>
+            <p class="text-muted mb-3 fs-5">לחצו על הפריטים שברצונכם להוסיף לשקית ההפתעה שלכם (ניתן לבחור מספר פריטים):</p>
+            
+            <div class="items-gray-panel">
+                <div class="items-grid-white" role="region" aria-label="פריטים למילוי השקית">
+                    <!-- Item 1 -->
+                    <div class="item-white-card" data-item-id="item1" data-item-name="גומי" data-item-emoji="🍬">
+                        <span class="item-emoji">🍬</span>
+                        <span class="item-name">גומי</span>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="item-white-card" data-item-id="item2" data-item-name="אקמול" data-item-emoji="💊">
+                        <span class="item-emoji">💊</span>
+                        <span class="item-name">אקמול</span>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="item-white-card" data-item-id="item3" data-item-name="אלכוהול" data-item-emoji="🍾">
+                        <span class="item-emoji">🍾</span>
+                        <span class="item-name">אלכוהול</span>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="item-white-card" data-item-id="item4" data-item-name="קפה" data-item-emoji="☕">
+                        <span class="item-emoji">☕</span>
+                        <span class="item-name">קפה</span>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="item-white-card" data-item-id="item5" data-item-name="קעקועים" data-item-emoji="🧜">
+                        <span class="item-emoji">🧜</span>
+                        <span class="item-name">קעקועים</span>
+                    </div>
+                    <!-- Item 6 -->
+                    <div class="item-white-card" data-item-id="item6" data-item-name="מסכת פנים" data-item-emoji="🧖">
+                        <span class="item-emoji">🧖</span>
+                        <span class="item-name">מסכת פנים</span>
+                    </div>
+                    <!-- Item 7 -->
+                    <div class="item-white-card" data-item-id="item7" data-item-name="פותחן" data-item-emoji="🗝️">
+                        <span class="item-emoji">🗝️</span>
+                        <span class="item-name">פותחן</span>
+                    </div>
+                    <!-- Item 8 -->
+                    <div class="item-white-card" data-item-id="item8" data-item-name="גרביים" data-item-emoji="🧦">
+                        <span class="item-emoji">🧦</span>
+                        <span class="item-name">גרביים</span>
+                    </div>
+                    <!-- Item 9 -->
+                    <div class="item-white-card" data-item-id="item9" data-item-name="תה" data-item-emoji="🌿">
+                        <span class="item-emoji">🌿</span>
+                        <span class="item-name">תה</span>
                     </div>
                 </div>
-                <!-- Sticky Bag Visual & Counter Sidebar (Right) -->
-                <div class="bag-aside-container">
-                    <div class="bag-visual-card">
-                        <h4 style="font-size: 1.4rem; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 15px;">🛍️ השקית שלכם</h4>
-
-                        <!-- Floating bag preview container -->
-                        <div class="visual-bag-container">
-                            <!-- Visual bag SVG matching chosen radio option -->
-                            <svg id="visual-bag-svg" viewBox="0 0 100 120" class="visual-bag-svg">
-                                <!-- Kraft bag by default -->
-                                <path d="M20 30 L80 30 L85 110 L15 110 Z" fill="#d2b48c" stroke="#1e1a3c" stroke-width="4"/>
-                                <path d="M35 30 C35 15, 65 15, 65 30" fill="none" stroke="#1e1a3c" stroke-width="4"/>
-                                <line x1="20" y1="50" x2="80" y2="50" stroke="#1e1a3c" stroke-width="2"/>
-                                <line x1="17" y1="70" x2="83" y2="70" stroke="#1e1a3c" stroke-width="2"/>
-                                <line x1="15" y1="90" x2="85" y2="90" stroke="#1e1a3c" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <!-- Real-time badge visual representation checklist -->
-                        <h5 class="fs-6 mt-3 mb-2 text-start">פריטים בתוך השקית:</h5>
-                        <div class="bag-badge-container">
-                            <!-- Dynamic items rendered in JS -->
-                        </div>
-                        <!-- Counter feedback text -->
-                        <div class="mt-4 p-3 bg-white neobrutal-border" style="box-shadow:3px 3px 0 #1e1a3c; border-radius:8px;">
-                            <p class="m-0 fs-6 fw-bold">
-                                השקית שלכם מוכנה! מילאתם אותה ב-<span id="bag-item-count" style="color:var(--color-pink); font-size:1.3rem;">0</span> פריטים של נוסטלגיה והישרדות.
-                            </p>
-                        </div>
-                        <!-- Submit action -->
-                        <button id="checkout-bag-btn" class="btn-retro btn-retro-pink w-100 mt-3 py-3" disabled>
-                            קבלת שקית ההפתעה שלי! 🎁
-                        </button>
-                    </div>
-                </div>
+            </div>
+            
+            <!-- Submit Action -->
+            <div class="text-center mt-5">
+                <button id="checkout-bag-btn" class="btn-retro btn-retro-pink px-5 py-3 font-chava fs-4" disabled>
+                    סיימתי! תראו לי תוצאה!
+                </button>
             </div>
         </section>
     </div>
 </main>
+
+<!-- Fireworks Canvas -->
+<canvas id="fireworks-canvas" class="fireworks-canvas"></canvas>
+
 <!-- Checkout Summary Retro Modal (WCAG A11y Accessible Dialog) -->
 <div id="retro-checkout-modal" class="modal-retro" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
     <div class="modal-dialog-retro">
         <div class="modal-header-retro">
-            <h3 id="modal-title">🎉 השקית שלכם מוכנה למשלוח!</h3>
+            <h3 id="modal-title" class="font-chava">🎉 השקית שלכם מוכנה!</h3>
             <button class="btn-close-retro" aria-label="סגור חלונית">&times;</button>
         </div>
         <div class="modal-body-retro text-start">
+            <div class="text-center mb-4">
+                <img id="modal-checkout-bag-img" src="Images birthday site/surprise_bag_empty.png" alt="שקית הפתעה" class="img-fluid rounded border border-3 border-dark p-2 bg-white" style="max-height: 180px; object-fit: contain; box-shadow: 4px 4px 0 var(--border-color);">
+            </div>
             <p class="fs-5 text-center mb-4">
                 סחטיין עליכם! הרכבתם שקית הפתעה מטורפת עם <strong id="modal-checkout-count" class="text-danger">0</strong> פריטי נוסטלגיה והישרדות.
             </p>
-            <h4 class="fs-6 mb-2 text-decoration-underline">סוג השקית שבחרתם:</h4>
+            <h4 class="fs-6 mb-2 text-decoration-underline fw-bold">סוג השקית שבחרתם:</h4>
             <p class="fw-bold fs-5 mb-4" id="modal-checkout-bag-name">שקית נייר קראפט 🤎</p>
 
-            <h4 class="fs-6 mb-2 text-decoration-underline">רשימת ההפתעות בשקית שלכם:</h4>
+            <h4 class="fs-6 mb-2 text-decoration-underline fw-bold">רשימת ההפתעות בשקית שלכם:</h4>
             <ul id="modal-checkout-list" style="list-style-type: '🎁 '; padding-right:20px;" class="mb-4">
                 <!-- Filled dynamically in JS -->
             </ul>
@@ -359,7 +279,7 @@
             </div>
 
             <div class="text-center mt-4">
-                <button class="btn-retro btn-retro-purple w-75 py-2" onclick="alert('השקית נשלחה באהבה רבה לתעשיית האפרופו והבמבה! 🎈'); window.location.reload();">
+                <button class="btn-retro btn-retro-purple w-75 py-2 font-chava" onclick="alert('השקית נשלחה באהבה רבה לתעשיית האפרופו והבמבה! 🎈'); window.location.reload();">
                     אישור וסיום 🚀
                 </button>
             </div>
@@ -379,13 +299,16 @@
             </div>
         </nav>
         <div class="footer-credit-retro">
-            <p class="fs-5 m-0">כל הזכויות שמורות © יום הולדת של פעם עם כאבי גב של היום 🩹🎈</p>
+            <p class="fs-5 m-0 font-chava">כל הזכויות שמורות © יום הולדת של פעם עם כאבי גב של היום 🩹🎈</p>
             <p class="fs-6 mt-2 text-muted">האתר מפותח באמצעות Vanilla HTML, CSS ו-JS בלבד ללא שום צורך להזעיק אורתופד.</p>
         </div>
     </div>
 </footer>
 <!-- Bootstrap JS Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<!-- Canvas Confetti CDN -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
 <!-- Shared interactive app controller script -->
 <script src="JS/app.js"></script>
